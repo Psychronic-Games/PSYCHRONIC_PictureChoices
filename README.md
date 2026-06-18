@@ -2,13 +2,36 @@
 
 Display picture-based choices anywhere on screen with smooth zoom transitions and restore default positioning after done.
 
-## What This Is
+## What It Does
 
-This repository contains a standalone **RPG Maker MZ plugin** from Psychronic.
+PSYCHRONIC_PictureChoices.
 
-## Plugin File
+## Highlights
 
-- `PSYCHRONIC_PictureChoices.js`
+- Use SetChoiceImage or SetMultipleChoiceImages before Show Choices if you want picture-based choices.
+- If no picture choices are set, normal behavior applies.
+- After the picture choices are done, the plugin restores $gameMessage settings and calls updatePlacement().
+
+## Plugin Commands
+
+- SetChoiceImage
+- SetMultipleChoiceImages
+
+## Basic Usage
+
+- Use SetChoiceImage or SetMultipleChoiceImages before Show Choices if you want picture-based choices.
+- If no picture choices are set, normal behavior applies.
+- After the picture choices are done, the plugin restores $gameMessage settings and calls updatePlacement().
+@command SetChoiceImage
+@text Set Choice Image
+@desc Assign image to a single choice with optional scale/speed.
+@arg choiceIndex
+@type number
+
+## Compatibility
+
+- RPG Maker MZ
+- JavaScript plugin for `js/plugins/`
 
 ## Installation
 
@@ -23,6 +46,8 @@ This version was exported from the RPG Reactor Complex template source plugin fo
 ## Author
 
 * @url
+
+* @help
 
 ## License
 
