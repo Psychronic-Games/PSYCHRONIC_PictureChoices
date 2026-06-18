@@ -17,17 +17,28 @@ PSYCHRONIC_PictureChoices.
 
 ## Plugin Commands
 
-- `SetChoiceImage`
-- `SetMultipleChoiceImages`
+### Set Choice Image
 
-## Parameter Summary
+- Command: `SetChoiceImage`
+- Description: Assign image to a single choice with optional scale/speed.
 
-- choiceIndex: 1-based choice index.
-- pictureName
-- xOffset
-- yOffset
-- selectedScale
-- transitionSpeed
+Arguments:
+
+- `choiceIndex` (choiceIndex) - type: number: Choice number (1-based).
+- `pictureName` (pictureName) - type: file: Image filename (no extension).
+- `xOffset` (xOffset) - type: number; default: 0
+- `yOffset` (yOffset) - type: number; default: 0
+- `selectedScale` (selectedScale) - type: number; default: 1.1
+- `transitionSpeed` (transitionSpeed) - type: number; default: 0.1
+
+### Set Multiple Choice Images
+
+- Command: `SetMultipleChoiceImages`
+- Description: Assign images and parameters to multiple choices.
+
+Arguments:
+
+- `choices` (choices) - type: struct<ChoiceImage>[]: A list of choice image entries.
 
 ## Installation
 
@@ -44,48 +55,6 @@ PSYCHRONIC_PictureChoices.
 - Use SetChoiceImage or SetMultipleChoiceImages before Show Choices if you want picture-based choices.
 - If no picture choices are set, normal behavior applies.
 - After the picture choices are done, the plugin restores $gameMessage settings and calls updatePlacement().
-
-@command SetChoiceImage
-@text Set Choice Image
-@desc Assign image to a single choice with optional scale/speed.
-
-@arg choiceIndex
-@type number
-@min 1
-@desc Choice number (1-based).
-
-@arg pictureName
-@type file
-@dir img/pictures
-@desc Image filename (no extension).
-
-@arg xOffset
-@type number
-@default 0
-
-@arg yOffset
-@type number
-@default 0
-
-@arg selectedScale
-@type number
-@decimals 2
-@default 1.1
-
-@arg transitionSpeed
-@type number
-@decimals 2
-@min 0.01
-@max 1
-@default 0.1
-
-@command SetMultipleChoiceImages
-@text Set Multiple Choice Images
-@desc Assign images and parameters to multiple choices.
-
-@arg choices
-@type struct<ChoiceImage>[]
-@desc A list of choice image entries.
 
 ## Source
 
